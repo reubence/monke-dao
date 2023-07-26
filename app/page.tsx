@@ -25,19 +25,20 @@ export default function Home() {
     <div className="h-screen w-screen overflow-clip">
       <NavigationMenu />
       <main className="h-full w-full">
-        <div className="mx-auto sm:px-10 sm:pt-20 lg:px-16 max-w-7xl grid grid-cols-2 gap-0 w-full h-full lg:flex-row items-stretch">
-          <div className="col-span-1">
-            <AspectRatio ratio={16 / 16}>
+        <div className="max-w-screen-7xl w-full rounded-[60px] overflow-x-clip">
+          <section className="flex flex-col w-full lg:flex-row items-stretch">
+            <div className="flex flex-col items-end lg:w-1/2">
               <Image
                 src={"/../public/nft-1.png"}
                 alt="Logo"
                 height={550}
                 width={550}
               />
-            </AspectRatio>
-          </div>
-
-          <div className="col-span-1 bg-white"></div>
+            </div>
+            <div className="lg:col-span-1 bg-chocolate h-full w-full justify-center lg:w-1/2">
+              <h1>SMB #1232</h1>
+            </div>
+          </section>
         </div>
       </main>
     </div>
