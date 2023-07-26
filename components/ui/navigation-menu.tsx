@@ -1,32 +1,195 @@
+"use client";
+
 import Image from "next/image";
 import LOGO_ONE from "../../public/logo-1.svg";
 import LOGO_ICON from "../../public/Logo-Icon.svg";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import LOGO_WALL from "../../public/logo-wall.png";
+import DASHBOARD from "../../public/icons/dashboard-icon.svg";
+import LEADERBOARD from "../../public/icons/leaderboard-icon.svg";
+import DISCONNECT from "../../public/icons/disconnect-icon.svg";
+import TWITTER from "../../public/icons/twitter-icon.svg";
+import DISCORD from "../../public/icons/discord-icon.svg";
+import WEBSITE from "../../public/icons/website-icon.svg";
+import SQUARE from "../../public/icons/square-icon.svg";
 
-const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
+import * as React from "react";
+import { Check, ChevronsUpDown } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+} from "@/components/ui/command";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+
+import { buttonVariants } from "./button";
+import { Separator } from "./separator";
+import Link from "next/link";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
+const navItems = [
+  { name: "Twitter", href: "#", icon: TWITTER },
+  { name: "Discord", href: "#", icon: DISCORD },
+  { name: "Square", href: "#", icon: SQUARE },
+  { name: "Website", href: "#", icon: WEBSITE },
 ];
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
+const frameworks = [
+  {
+    icon: DASHBOARD,
+    value: "dashboard",
+    label: "DASHBOARD",
+  },
+  {
+    icon: LEADERBOARD,
+    value: "user leaderboard",
+    label: "USER LEADERBOARD",
+  },
+];
+
 export default function NavigationMenu() {
+  const [open, setOpen] = React.useState(false);
+  const [value, setValue] = React.useState("dashboard");
+
   return (
-    <nav className="bg-gray-800">
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div className="relative flex h-16 items-center justify-between">
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+    <nav className="bg-gray-800 overflow-clip relative">
+      <div className="absolute inset-0">
+        <Image
+          src={LOGO_WALL}
+          alt="Logo"
+          className="absolute"
+          fill
+          objectFit="cover"
+        />
+      </div>
+
+      <div className="mx-auto px-8 h-36">
+        <div className="relative flex h-full items-center justify-between">
+          <div className="flex -mt-8">
+            <div className="flex">
+              {/* Logo */}
+              <Image src={LOGO_ONE} alt="Logo" />
+            </div>
+            <div className="hidden sm:ml-6 sm:block"></div>
+          </div>
+
+          <div className="flex mr-[18%] md:-mr-[20%] lg:-mr-[25%] xl:-mr-[30%]">
+            <Image src={LOGO_ICON} alt="Logo" className="w-[70px] h-[70px]" />
+          </div>
+
+          <div className="hidden sm:flex gap-5">
+            <div className="hidden xl:flex items-center [&>*:last-child]:!border-none mr-2">
+              {navItems.map((item, index) => (
+                <div className="px-4 border-r" key={index}>
+                  <Link href="#">
+                    <Image
+                      key={item.name}
+                      src={item.icon}
+                      alt={item.name}
+                      className="w-6 h-6 "
+                    />
+                  </Link>
+                </div>
+              ))}
+            </div>
+            <div className="hidden md:flex">
+              <Avatar className="h-16 w-16">
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+            </div>
+            <div className="relative mr-2">
+              <Popover open={open} onOpenChange={setOpen}>
+                <PopoverTrigger asChild>
+                  <Button
+                    role="combobox"
+                    aria-expanded={open}
+                    className="w-64 h-16 justify-between"
+                  >
+                    {value ? (
+                      <div className="flex items-center font-bold capitalize">
+                        <Image
+                          src={
+                            frameworks.find(
+                              (framework) => framework.value === value
+                            )?.icon!
+                          }
+                          alt={
+                            frameworks.find(
+                              (framework) => framework.value === value
+                            )?.icon!
+                          }
+                          className="mr-2 mb-1"
+                        />
+                        {
+                          frameworks.find(
+                            (framework) => framework.value === value
+                          )?.label
+                        }
+                      </div>
+                    ) : (
+                      "Select framework..."
+                    )}
+                    <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-64 p-0">
+                  <Command>
+                    <CommandInput placeholder="Search..." />
+                    <CommandEmpty>No framework found.</CommandEmpty>
+                    <CommandGroup>
+                      {frameworks.map((framework) => (
+                        <CommandItem
+                          key={framework.value}
+                          onSelect={(currentValue) => {
+                            setValue(
+                              currentValue === value ? "" : currentValue
+                            );
+                            setOpen(false);
+                          }}
+                        >
+                          <Image
+                            src={framework.icon!}
+                            alt={
+                              frameworks.find(
+                                (framework) => framework.value === value
+                              )?.icon!
+                            }
+                            className="mr-3.5"
+                          />
+                          {framework.label}
+                        </CommandItem>
+                      ))}
+                    </CommandGroup>
+                  </Command>
+                  <div className="px-2">
+                    <Separator />
+                    <div className="relative flex px-2 py-1.5 text-sm">
+                      <Image
+                        src={DISCONNECT}
+                        alt={"Disconnect"}
+                        className="mr-3 -ml-1"
+                      />
+
+                      <Link href="https://google.com">DISCONNECT</Link>
+                    </div>
+                  </div>
+                </PopoverContent>
+              </Popover>
+            </div>
+          </div>
+          <div className="inset-y-0 right-0 flex items-center sm:hidden">
             <button
               type="button"
               className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
@@ -63,33 +226,6 @@ export default function NavigationMenu() {
                 />
               </svg>
             </button>
-          </div>
-          <div className="flex flex-1 items-center justify-center sm:justify-start">
-            <div className="flex flex-shrink-0 items-center">
-              {/* Logo */}
-              <Image src={LOGO_ONE} alt="Logo" />
-            </div>
-            <div className="hidden sm:ml-6 sm:block"></div>
-          </div>
-
-          <div className="flex">
-            <Image src={LOGO_ICON} alt="Logo" />
-          </div>
-
-          <div className="flex">
-            <div className="relative ml-3">
-              <DropdownMenu>
-                <DropdownMenuTrigger>Open</DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>Profile</DropdownMenuItem>
-                  <DropdownMenuItem>Billing</DropdownMenuItem>
-                  <DropdownMenuItem>Team</DropdownMenuItem>
-                  <DropdownMenuItem>Subscription</DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
           </div>
         </div>
       </div>
