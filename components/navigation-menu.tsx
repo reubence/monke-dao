@@ -1,19 +1,19 @@
 "use client";
 
 import Image from "next/image";
-import LOGO_ONE from "../../public/logo-1.svg";
-import LOGO_ICON from "../../public/Logo-Icon.svg";
-import LOGO_WALL from "../../public/logo-wall.png";
-import DASHBOARD from "../../public/icons/dashboard-icon.svg";
-import LEADERBOARD from "../../public/icons/leaderboard-icon.svg";
-import DISCONNECT from "../../public/icons/disconnect-icon.svg";
-import TWITTER from "../../public/icons/twitter-icon.svg";
-import DISCORD from "../../public/icons/discord-icon.svg";
-import WEBSITE from "../../public/icons/website-icon.svg";
-import SQUARE from "../../public/icons/square-icon.svg";
+import LOGO_ONE from "../public/logo-1.svg";
+import LOGO_ICON from "../public/Logo-Icon.svg";
+import LOGO_WALL from "../public/logo-wall.png";
+import DASHBOARD from "../public/icons/dashboard-icon.svg";
+import LEADERBOARD from "../public/icons/leaderboard-icon.svg";
+import DISCONNECT from "../public/icons/disconnect-icon.svg";
+import TWITTER from "../public/icons/twitter-icon.svg";
+import DISCORD from "../public/icons/discord-icon.svg";
+import WEBSITE from "../public/icons/website-icon.svg";
+import SQUARE from "../public/icons/square-icon.svg";
 
 import * as React from "react";
-import { Check, ChevronsUpDown } from "lucide-react";
+import { Check, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -29,8 +29,8 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-import { buttonVariants } from "./button";
-import { Separator } from "./separator";
+import { buttonVariants } from "./ui/button";
+import { Separator } from "./ui/separator";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
@@ -141,7 +141,7 @@ export default function NavigationMenu() {
                     ) : (
                       "Select framework..."
                     )}
-                    <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                    <ChevronUp className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                   </Button>
                 </PopoverTrigger>
                 <PopoverContent className="w-64 p-0">
@@ -190,39 +190,29 @@ export default function NavigationMenu() {
             </div>
           </div>
           <div className="inset-y-0 right-0 flex items-center sm:hidden">
-            <button
-              type="button"
-              className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-            >
+            <button>
               <span className="sr-only">Open main menu</span>
               <svg
-                className="block h-6 w-6"
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
                 fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  d="M4.96826 7.46826H24.9683"
+                  stroke="white"
+                  stroke-width="2.5"
                 />
-              </svg>
-              <svg
-                className="hidden h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
+                  d="M4.96826 14.9683H24.9683"
+                  stroke="white"
+                  stroke-width="2.5"
+                />
+                <path
+                  d="M4.96826 22.4683H24.9683"
+                  stroke="white"
+                  stroke-width="2.5"
                 />
               </svg>
             </button>
