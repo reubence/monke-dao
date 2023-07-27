@@ -27,14 +27,22 @@ export default function Home() {
       <main className="h-full w-full">
         <div className="max-w-screen-7xl w-full overflow-x-clip px-4 sm:px-8 lg:px-10 pt-20">
           <section className="flex flex-col lg:flex-row">
-            <div className="flex flex-col content-stretch relative items-end mx-auto">
+            <div className="flex flex-col content-stretch relative items-end mx-auto lg:mr-0">
               <Image
                 src={NFT}
                 alt="Logo"
                 sizes="(min-width: 808px) 550px, (max-width: 808px) 343px"
+                style={{ width: "auto", height: "45vh" }}
+                className="hidden lg:block"
+              />
+              <Image
+                src={NFT}
+                alt="Logo"
+                sizes="(min-width: 808px) 550px, (max-width: 808px) 343px"
+                className="lg:hidden"
               />
             </div>
-            <div className="bg-white w-full max-w-[550px] mx-auto">
+            <div className="bg-white w-full max-w-[550px] mx-auto lg:ml-0">
               <h1>SMB #1232</h1>
             </div>
           </section>
