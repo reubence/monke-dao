@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import NFT from "public/nft-1.png";
 import useWindowSize from "@/lib/useWindowSize";
+import { CardWithForm } from "@/components/art-details";
 // array of objects - each object has a image, label
 const frameworks = [
   {
@@ -29,23 +30,22 @@ export default function Home() {
         <div className="max-w-screen-7xl w-full overflow-x-clip px-4 sm:px-8 lg:px-10 pt-20">
           <section></section>
           <section className="flex flex-col lg:flex-row">
-            <div className="flex flex-col content-stretch relative items-end mx-auto lg:mr-0">
+            <div className="flex mx-auto lg:mr-0">
               <Image
                 src={NFT}
                 alt="Logo"
                 sizes="(min-width: 808px) 550px, (max-width: 808px) 343px"
-                style={{ width: "auto", height: "45vh" }}
-                className="hidden lg:block max-h-[550px]"
+                className="hidden lg:block lg:h-[45vh] lg:w-auto tall:block tall:h-[550px]"
               />
               <Image
                 src={NFT}
                 alt="Logo"
                 sizes="(min-width: 808px) 550px, (max-width: 808px) 343px"
-                className="lg:hidden"
+                className="lg:hidden tall:hidden"
               />
             </div>
             <div className="bg-white w-full max-w-[550px] lg:max-w-[500px] xl:max-w-[550px] 2xl:max-w-[663px] mx-auto lg:ml-0">
-              <h1>SMB #1232</h1>
+              <CardWithForm />
             </div>
           </section>
           <section

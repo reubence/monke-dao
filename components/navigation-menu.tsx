@@ -97,7 +97,7 @@ export default function NavigationMenu() {
                       key={item.name}
                       src={item.icon}
                       alt={item.name}
-                      className="w-6 h-6 "
+                      className="w-6 h-6"
                     />
                   </Link>
                 </div>
@@ -109,7 +109,7 @@ export default function NavigationMenu() {
                 <AvatarFallback>MD</AvatarFallback>
               </Avatar>
             </div>
-            <div className="relative mr-2">
+            <div className="hidden lg:block relative mr-2">
               <Popover open={open} onOpenChange={setOpen}>
                 <PopoverTrigger asChild>
                   <Button
@@ -271,7 +271,7 @@ export default function NavigationMenu() {
               </Popover>
             </div>
           </div>
-          <div className="inset-y-0 right-0 flex items-center md:hidden">
+          <div className="inset-y-0 right-0 flex items-center lg:hidden">
             <button>
               <span className="sr-only">Open main menu</span>
               <svg
