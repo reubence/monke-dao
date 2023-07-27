@@ -1,12 +1,11 @@
-import { Button, buttonVariants } from "@/components/ui/button";
 import NavigationMenu from "@/components/navigation-menu";
 import Image from "next/image";
-import Link from "next/link";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import NFT from "public/nft-1.png";
-import useWindowSize from "@/lib/useWindowSize";
 import { CardWithForm } from "@/components/art-details";
-// array of objects - each object has a image, label
+import THREE_MONKEYS from "../public/three-monkeys-muted-bg.svg";
+import BG_TEXT_LG from "../public/monkey-dao-muted-bg-text-large.svg";
+import BG_TEXT_SM from "../public/monke-dao-muted-bg-text.svg";
+
 const frameworks = [
   {
     image: "public/nft-1.png",
@@ -44,8 +43,20 @@ export default function Home() {
                 className="lg:hidden tall:hidden"
               />
             </div>
-            <div className="bg-white w-full max-w-[550px] lg:max-w-[500px] xl:max-w-[550px] 2xl:max-w-[663px] mx-auto lg:ml-0">
+            <div className="relative bg-white w-full max-w-[550px] lg:max-w-[500px] xl:max-w-[550px] 2xl:max-w-[663px] mx-auto lg:ml-0">
               <CardWithForm />
+
+              {/* BACKGROUND SVGs */}
+              <Image
+                src={BG_TEXT_SM}
+                alt="Monke Dao"
+                className="hidden 2xl:block tall:absolute tall:block 2xl:absolute bottom-5 right-8"
+              />
+              <Image
+                src={THREE_MONKEYS}
+                alt="Three Monkeys"
+                className="hidden tall:block tall:absolute bottom-0 left-0"
+              />
             </div>
           </section>
           <section

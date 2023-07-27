@@ -32,7 +32,7 @@ const tasks = [
 ];
 export function CardWithForm() {
   return (
-    <Card className="relative border-none shadow-none">
+    <Card className="relative border-none shadow-none bg-transparent z-10">
       <CardHeader className="px-8 py-6">
         <CardDescription className="font-black">Gen3</CardDescription>
         <CardTitle>SMB #1235</CardTitle>
@@ -133,7 +133,7 @@ export function CardWithForm() {
             </ScrollArea>
           </TabsContent>
           <TabsContent className="px-8 py-5" value="password">
-            Change your password here.
+            Put Content here please.
           </TabsContent>
         </Tabs>
       </CardContent>
