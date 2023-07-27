@@ -33,7 +33,7 @@ export default function Home() {
                 alt="Logo"
                 sizes="(min-width: 808px) 550px, (max-width: 808px) 343px"
                 style={{ width: "auto", height: "45vh" }}
-                className="hidden lg:block"
+                className="hidden lg:block max-h-[550px]"
               />
               <Image
                 src={NFT}
@@ -42,7 +42,7 @@ export default function Home() {
                 className="lg:hidden"
               />
             </div>
-            <div className="bg-white w-full max-w-[550px] lg:max-w-[500px] xl:max-w-[663px] xl:w-[866px] mx-auto lg:ml-0">
+            <div className="bg-white w-full max-w-[550px] lg:max-w-[500px] xl:max-w-[550px] 2xl:max-w-[663px] mx-auto lg:ml-0">
               <h1>SMB #1232</h1>
             </div>
           </section>
