@@ -42,10 +42,11 @@ export default function Home() {
                 className="lg:hidden"
               />
             </div>
-            <div className="bg-white w-full max-w-[550px] mx-auto lg:ml-0">
+            <div className="bg-white w-full max-w-[550px] lg:max-w-[500px] xl:max-w-[663px] xl:w-[866px] mx-auto lg:ml-0">
               <h1>SMB #1232</h1>
             </div>
           </section>
+          <section className="flex flex-col lg:flex-row"></section>
         </div>
       </main>
     </div>
