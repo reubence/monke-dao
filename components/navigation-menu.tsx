@@ -76,7 +76,7 @@ export default function NavigationMenu() {
 
       <div className="mx-auto px-8 h-36">
         <div className="relative flex h-full items-center justify-between">
-          <div className="flex -mt-8">
+          <div className="flex">
             <div className="flex">
               {/* Logo */}
               <Image src={LOGO_ONE} alt="Logo" />
