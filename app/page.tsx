@@ -68,6 +68,14 @@ export default function Home() {
                   key={i + 1}
                 >
                   <div className="absolute inset-0 bg-gray-100 group-hover:-top-16 duration-500 transition-all ease-in-out">
+                    <div className="absolute inset-0 top-1 right-1 w-fit z-10 text-muted-secondaryForeground">
+                      <p className="text-xs font-black text-muted-secondaryForeground">
+                        Gen 2
+                      </p>
+                      <h2 className="text-xl font-black leading-none tracking-tight">
+                        SMB #1235
+                      </h2>
+                    </div>
                     <Image
                       src={`/../public/nft-${i + 1}.png`} // dynamically sets the src attribute
                       alt="Monke Dao"
@@ -80,7 +88,7 @@ export default function Home() {
                     src={`/../public/nft-${i + 1}.png`} // dynamically sets the src attribute
                     alt="Monke Dao"
                     fill
-                    className="hidden lg:block"
+                    className="hidden lg:block z-20"
                   />
                 </div>
               );
