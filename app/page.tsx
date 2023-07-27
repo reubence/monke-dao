@@ -3,7 +3,7 @@ import NavigationMenu from "@/components/navigation-menu";
 import Image from "next/image";
 import Link from "next/link";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-
+import NFT from "public/nft-1.png";
 // array of objects - each object has a image, label
 const frameworks = [
   {
@@ -26,16 +26,15 @@ export default function Home() {
       <NavigationMenu />
       <main className="h-full w-full">
         <div className="max-w-screen-7xl w-full overflow-x-clip px-4 sm:px-8 lg:px-10 pt-20">
-          <section className="flex flex-col w-full lg:flex-row items-stretch">
-            <div className="flex flex-col lg:items-end lg:w-1/2">
+          <section className="flex flex-col lg:flex-row">
+            <div className="flex flex-col content-stretch relative items-end mx-auto">
               <Image
-                src={"/../public/nft-1.png"}
+                src={NFT}
                 alt="Logo"
-                height={550}
-                width={550}
+                sizes="(min-width: 808px) 550px, (max-width: 808px) 343px"
               />
             </div>
-            <div className="lg:col-span-1 bg-white min-h-full justify-center lg:w-[663px]">
+            <div className="bg-white w-full max-w-[550px] mx-auto">
               <h1>SMB #1232</h1>
             </div>
           </section>
