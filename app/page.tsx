@@ -23,10 +23,10 @@ const frameworks = [
 
 export default function Home() {
   return (
-    <div className="h-screen w-screen overflow-clip">
+    <div className="h-screen w-screen lg:overflow-clip">
       <NavigationMenu />
       <main className="h-full w-full">
-        <div className="max-w-screen-7xl w-full overflow-x-clip px-4 sm:px-8 lg:px-10 pt-20">
+        <div className="max-w-screen-7xl w-full overflow-x-clip px-4 sm:px-8 lg:px-10 py-20">
           <section></section>
           <section className="flex flex-col lg:flex-row">
             <div className="flex mx-auto lg:mr-0">
@@ -55,12 +55,12 @@ export default function Home() {
               <Image
                 src={THREE_MONKEYS}
                 alt="Three Monkeys"
-                className="hidden tall:block tall:absolute bottom-0 left-0"
+                className="block lg:hidden tall:block tall:absolute bottom-0 left-0"
               />
             </div>
           </section>
           <section
-            className={`fixed bottom-0 right-0 left-0 flex lg:w-[calc(500px+45vh)] xl:w-[calc(550px+45vh)] 2xl:w-[calc(663px+45vh)] mx-auto p-4 bg-gray-100`}
+            className={`hidden fixed bottom-0 right-0 left-0 lg:flex lg:w-[calc(500px+45vh)] xl:w-[calc(550px+45vh)] 2xl:w-[calc(663px+45vh)] mx-auto p-4 bg-gray-100`}
           >
             {[...Array(8)].map((_, i) => (
               <div

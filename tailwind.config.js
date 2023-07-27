@@ -17,7 +17,7 @@ module.exports = {
     },
     extend: {
       screens: {
-        tall: { raw: "(min-height: 980px)" },
+        tall: { raw: "(min-height: 980px) and (min-width: 1024px)" },
       },
       colors: {
         border: "hsl(var(--border))",
