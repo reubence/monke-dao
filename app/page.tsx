@@ -54,7 +54,7 @@ export default function Home() {
               <Image
                 src={THREE_MONKEYS}
                 alt="Three Monkeys"
-                className="block lg:hidden tall:block tall:absolute bottom-0 left-0"
+                className="block lg:hidden tall:block tall:absolute bottom-0 left-0 w-full lg:w-fit"
               />
             </div>
           </section>
@@ -68,7 +68,7 @@ export default function Home() {
                   key={i + 1}
                 >
                   <div className="absolute inset-0 bg-gray-100 group-hover:-top-16 duration-500 transition-all ease-in-out">
-                    <div className="absolute inset-0 m-4 z-10 text-muted-secondaryForeground">
+                    <div className="absolute inset-0 m-4 z-10 text-muted-secondaryForeground opacity-0 group-hover:opacity-100 delay-300 duration-200 transition-all ease-in-out">
                       <p className="text-xs font-black text-muted-secondaryForeground">
                         Gen 2
                       </p>
