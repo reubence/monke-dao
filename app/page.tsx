@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import NFT from "public/nft-1.png";
+import useWindowSize from "@/lib/useWindowSize";
 // array of objects - each object has a image, label
 const frameworks = [
   {
@@ -26,6 +27,7 @@ export default function Home() {
       <NavigationMenu />
       <main className="h-full w-full">
         <div className="max-w-screen-7xl w-full overflow-x-clip px-4 sm:px-8 lg:px-10 pt-20">
+          <section></section>
           <section className="flex flex-col lg:flex-row">
             <div className="flex flex-col content-stretch relative items-end mx-auto lg:mr-0">
               <Image
@@ -46,7 +48,18 @@ export default function Home() {
               <h1>SMB #1232</h1>
             </div>
           </section>
-          <section className="flex flex-col lg:flex-row"></section>
+          <section
+            className={`fixed bottom-0 right-0 left-0 flex lg:w-[calc(500px+45vh)] xl:w-[calc(550px+45vh)] 2xl:w-[calc(663px+45vh)] mx-auto p-4 bg-gray-100`}
+          >
+            {[...Array(8)].map((_, i) => (
+              <div
+                className="flex-grow border-2 border-gray-300 m-1 p-4 bg-white"
+                key={i}
+              >
+                {/* Any content you want here */}
+              </div>
+            ))}
+          </section>
         </div>
       </main>
     </div>
