@@ -1,6 +1,9 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import Image from "next/image";
+import BG_TEXT_LG from "../public/monkey-dao-muted-bg-text-large.svg";
+import { cn } from "@/lib/utils";
 
 const inter = Montserrat({ subsets: ["latin"] });
 
@@ -16,7 +19,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={cn(inter.className, "relative")}>
+        <Image
+          src={BG_TEXT_LG}
+          alt="Three Monkeys"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden lg:block"
+        />
+        {children}
+      </body>
     </html>
   );
 }

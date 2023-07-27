@@ -3,7 +3,6 @@ import Image from "next/image";
 import NFT from "public/nft-1.png";
 import { CardWithForm } from "@/components/art-details";
 import THREE_MONKEYS from "../public/three-monkeys-muted-bg.svg";
-import BG_TEXT_LG from "../public/monkey-dao-muted-bg-text-large.svg";
 import BG_TEXT_SM from "../public/monke-dao-muted-bg-text.svg";
 
 const frameworks = [
@@ -23,7 +22,7 @@ const frameworks = [
 
 export default function Home() {
   return (
-    <div className="h-screen w-screen lg:overflow-clip">
+    <div className="relative h-screen w-screen lg:overflow-clip">
       <NavigationMenu />
       <main className="h-full w-full">
         <div className="max-w-screen-7xl w-full overflow-x-clip px-4 sm:px-8 lg:px-10 py-20">
