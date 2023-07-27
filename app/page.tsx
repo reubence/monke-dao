@@ -59,7 +59,7 @@ export default function Home() {
             </div>
           </section>
           <section
-            className={`hidden fixed bottom-0 right-0 left-0 lg:flex lg:w-[calc(500px+45vh)] xl:w-[calc(550px+45vh)] 2xl:w-[calc(663px+45vh)] mx-auto p-4 bg-gray-100`}
+            className={`hidden fixed bottom-0 right-0 left-0 lg:flex lg:w-[calc(500px+45vh)] xl:w-[calc(550px+45vh)] 2xl:w-[calc(663px+45vh)] tall:w-[calc(550px+663px)] mx-auto p-4 bg-gray-100`}
           >
             {[...Array(8)].map((_, i) => (
               <div
