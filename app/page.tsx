@@ -59,16 +59,32 @@ export default function Home() {
             </div>
           </section>
           <section
-            className={`hidden fixed bottom-0 right-0 left-0 lg:flex lg:w-[calc(500px+45vh)] xl:w-[calc(550px+45vh)] 2xl:w-[calc(663px+45vh)] tall:w-[calc(550px+663px)] mx-auto p-4 bg-gray-100`}
+            className={`hidden fixed bottom-0 right-0 left-0 lg:flex lg:w-[calc(500px+45vh)] xl:w-[calc(550px+45vh)] 2xl:w-[calc(663px+45vh)] tall:w-[calc(550px+663px)] mx-auto`}
           >
-            {[...Array(8)].map((_, i) => (
-              <div
-                className="flex-grow border-2 border-gray-300 m-1 p-4 bg-white"
-                key={i}
-              >
-                {/* Any content you want here */}
-              </div>
-            ))}
+            {[...Array(8)].map((_, i) => {
+              return (
+                <div
+                  className="group hover:cursor-pointer relative flex-grow lg:h-[calc((500px+45vh)/8)] xl:h-[calc((550px+45vh)/8)]  2xl:h-[calc((663px+45vh)/8)] tall:h-[calc((550px+663px)/8)] bg-white"
+                  key={i + 1}
+                >
+                  <div className="absolute inset-0 bg-gray-100 group-hover:-top-16 duration-500 transition-all ease-in-out">
+                    <Image
+                      src={`/../public/nft-${i + 1}.png`} // dynamically sets the src attribute
+                      alt="Monke Dao"
+                      fill
+                      quality={10}
+                      className="hidden lg:block !h-[999px]"
+                    />
+                  </div>
+                  <Image
+                    src={`/../public/nft-${i + 1}.png`} // dynamically sets the src attribute
+                    alt="Monke Dao"
+                    fill
+                    className="hidden lg:block"
+                  />
+                </div>
+              );
+            })}
           </section>
         </div>
       </main>
