@@ -68,7 +68,7 @@ export default function Home() {
                   key={i + 1}
                 >
                   <div className="absolute inset-0 bg-gray-100 group-hover:-top-16 duration-500 transition-all ease-in-out">
-                    <div className="absolute inset-0 top-1 right-1 w-fit z-10 text-muted-secondaryForeground">
+                    <div className="absolute inset-0 m-4 z-10 text-muted-secondaryForeground">
                       <p className="text-xs font-black text-muted-secondaryForeground">
                         Gen 2
                       </p>
