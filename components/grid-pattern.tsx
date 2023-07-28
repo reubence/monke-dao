@@ -76,9 +76,12 @@ export function GridPattern({
 
       setHoveredBlocks((blocks) => {
         let key = counter.current++;
-        return [...blocks, [x, y, key]].filter(
-          (block) => !(block[0] === x && block[1] === y && block[2] !== key)
-        );
+        let newBlock: [number, number, number] = [x, y, key];
+        return blocks
+          .filter(
+            (block) => !(block[0] === x && block[1] === y && block[2] !== key)
+          )
+          .concat([newBlock]);
       });
     }
 
