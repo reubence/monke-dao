@@ -5,6 +5,7 @@ import { ArtDetails } from "@/components/art-details";
 import THREE_MONKEYS from "../public/three-monkeys-muted-bg.svg";
 import BG_TEXT_SM from "../public/monke-dao-muted-bg-text.svg";
 import LOGO from "../public/Logo-Icon.svg";
+import Slider from "@/components/slider";
 
 const frameworks = [
   {
@@ -23,11 +24,13 @@ const frameworks = [
 
 export default function Home() {
   return (
-    <div className="relative h-screen w-screen lg:overflow-clip">
+    <div className="relative h-screen w-screen overflow-x-clip lg:overflow-clip">
       <NavigationMenu />
       <main className="h-full w-full">
         <div className="max-w-screen-7xl w-full overflow-x-clip px-4 sm:px-8 lg:px-10 py-3 lg:py-20">
-          <section></section>
+          <section className="lg:hidden pb-7">
+            <Slider />
+          </section>
           <section className="flex flex-col lg:flex-row">
             <div className="flex mx-auto lg:mr-0">
               <Image
