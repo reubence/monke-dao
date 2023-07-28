@@ -7,15 +7,51 @@ import BG_TEXT_SM from "../public/monke-dao-muted-bg-text.svg";
 import LOGO from "../public/Logo-Icon.svg";
 import Slider from "@/components/slider";
 
-const frameworks = [
+const data = [
   {
-    image: "public/nft-1.png",
+    image: "/../public/nft-1.png",
     id: "1741",
     gen: 2,
     multiplier: 1,
   },
   {
-    image: "public/nft-2.png",
+    image: "/../public/nft-2.png",
+    id: "3253",
+    gen: 3,
+    multiplier: 4,
+  },
+  {
+    image: "/../public/nft-3.png",
+    id: "4456",
+    gen: 2,
+    multiplier: 1,
+  },
+  {
+    image: "/../public/nft-4.png",
+    id: "1741",
+    gen: 2,
+    multiplier: 1,
+  },
+  {
+    image: "/../public/nft-5.png",
+    id: "3253",
+    gen: 3,
+    multiplier: 4,
+  },
+  {
+    image: "/../public/nft-6.png",
+    id: "4456",
+    gen: 2,
+    multiplier: 1,
+  },
+  {
+    image: "/../public/nft-7.png",
+    id: "1741",
+    gen: 2,
+    multiplier: 1,
+  },
+  {
+    image: "/../public/nft-8.png",
     id: "3253",
     gen: 3,
     multiplier: 4,
@@ -78,7 +114,7 @@ export default function Home() {
               Points: 5,000
             </div>
 
-            {[...Array(8)].map((_, i) => {
+            {data.map((item, i) => {
               return (
                 <div
                   className="group hover:cursor-pointer relative flex-grow lg:h-[calc((500px+45vh)/8)] xl:h-[calc((550px+45vh)/8)]  2xl:h-[calc((663px+45vh)/8)] tall:h-[calc((550px+663px)/8)] bg-white"
@@ -87,7 +123,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gray-100 group-hover:-top-16 duration-500 transition-all ease-in-out">
                     <div className="absolute inset-0 m-4 z-10 text-muted-secondaryForeground opacity-0 group-hover:opacity-100 delay-300 duration-200 transition-all ease-in-out">
                       <div className="relative text-[10px] tall:text-xs font-black text-muted-secondaryForeground">
-                        Gen 2
+                        Gen {item.gen}
                         <Image
                           src={LOGO}
                           alt="Monke Dao"
@@ -95,11 +131,11 @@ export default function Home() {
                         />
                       </div>
                       <h2 className="whitespace-nowrap tall:text-xl font-black leading-none tracking-tight">
-                        SMB #1235
+                        SMB {item.id}
                       </h2>
                     </div>
                     <Image
-                      src={`/../public/nft-${i + 1}.png`} // dynamically sets the src attribute
+                      src={item.image}
                       alt="Monke Dao"
                       fill
                       quality={10}
@@ -107,7 +143,7 @@ export default function Home() {
                     />
                   </div>
                   <Image
-                    src={`/../public/nft-${i + 1}.png`} // dynamically sets the src attribute
+                    src={item.image}
                     alt="Monke Dao"
                     fill
                     className="hidden lg:block z-20"

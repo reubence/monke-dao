@@ -8,6 +8,57 @@ import "swiper/css/scrollbar";
 
 import { useState } from "react";
 
+const data = [
+  {
+    image: "/../public/nft-1.png",
+    id: "1741",
+    gen: 2,
+    multiplier: 1,
+  },
+  {
+    image: "/../public/nft-2.png",
+    id: "3253",
+    gen: 3,
+    multiplier: 4,
+  },
+  {
+    image: "/../public/nft-3.png",
+    id: "4456",
+    gen: 2,
+    multiplier: 1,
+  },
+  {
+    image: "/../public/nft-4.png",
+    id: "1741",
+    gen: 2,
+    multiplier: 1,
+  },
+  {
+    image: "/../public/nft-5.png",
+    id: "3253",
+    gen: 3,
+    multiplier: 4,
+  },
+  {
+    image: "/../public/nft-6.png",
+    id: "4456",
+    gen: 2,
+    multiplier: 1,
+  },
+  {
+    image: "/../public/nft-7.png",
+    id: "1741",
+    gen: 2,
+    multiplier: 1,
+  },
+  {
+    image: "/../public/nft-8.png",
+    id: "3253",
+    gen: 3,
+    multiplier: 4,
+  },
+];
+
 const Slider = () => {
   const [slidesPerView, setSlidesPerView] = useState(3);
   return (
@@ -21,11 +72,11 @@ const Slider = () => {
       modules={[Scrollbar]}
       className="mySwiper"
     >
-      {[...Array(8)].map((_, i) => {
+      {data.map((item, i) => {
         return (
           <SwiperSlide key={i} className="!flex">
             <Image
-              src={`/../public/nft-${i + 1}.png`}
+              src={item.image} // dynamically sets the src attribute
               alt="Monkey"
               width={300}
               height={300}
