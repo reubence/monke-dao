@@ -1,9 +1,14 @@
 "use client";
-
 import { useEffect, useId, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-function Block({ x, y, ...props }) {
+interface BlockProps {
+  x: number;
+  y: number;
+  [key: string]: any;
+}
+
+function Block({ x, y, ...props }: BlockProps) {
   return (
     <motion.path
       transform={`translate(${-32 * y + 96 * x} ${160 * y})`}
@@ -13,13 +18,25 @@ function Block({ x, y, ...props }) {
   );
 }
 
-export function GridPattern({ yOffset = 0, interactive = false, ...props }) {
+interface GridPatternProps {
+  yOffset?: number;
+  interactive?: boolean;
+  [key: string]: any;
+}
+
+export function GridPattern({
+  yOffset = 0,
+  interactive = false,
+  ...props
+}: GridPatternProps) {
   let id = useId();
-  let ref = useRef();
-  let currentBlock = useRef();
+  let ref = useRef<SVGSVGElement | null>(null);
+  let currentBlock = useRef<[number, number] | null>(null);
   let counter = useRef(0);
-  let [hoveredBlocks, setHoveredBlocks] = useState([]);
-  let staticBlocks = [
+  let [hoveredBlocks, setHoveredBlocks] = useState<
+    Array<[number, number, number]>
+  >([]);
+  let staticBlocks: Array<[number, number]> = [
     [1, 1],
     [2, 2],
     [4, 3],
@@ -33,7 +50,7 @@ export function GridPattern({ yOffset = 0, interactive = false, ...props }) {
       return;
     }
 
-    function onMouseMove(event) {
+    function onMouseMove(event: MouseEvent) {
       if (!ref.current) {
         return;
       }
