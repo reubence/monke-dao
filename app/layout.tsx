@@ -4,6 +4,7 @@ import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import BG_TEXT_LG from "../public/monkey-dao-muted-bg-text-large.svg";
 import { cn } from "@/lib/utils";
+import { GridPattern } from "@/components/grid-pattern";
 
 const inter = Montserrat({ subsets: ["latin"] });
 
@@ -24,6 +25,11 @@ export default function RootLayout({
           src={BG_TEXT_LG}
           alt="Three Monkeys"
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden lg:block"
+        />
+        <GridPattern
+          yOffset={-96}
+          className="absolute inset-x-0 -top-20 -right-14 -z-10 h-[1000px] w-full fill-[#184623]/40 stroke-muted-foreground [mask-image:linear-gradient(to_top_left,white_10%,transparent_30%)]"
+          interactive
         />
         {children}
       </body>
