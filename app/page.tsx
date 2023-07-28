@@ -1,9 +1,10 @@
 import NavigationMenu from "@/components/navigation-menu";
 import Image from "next/image";
 import NFT from "public/nft-1.png";
-import { CardWithForm } from "@/components/art-details";
+import { ArtDetails } from "@/components/art-details";
 import THREE_MONKEYS from "../public/three-monkeys-muted-bg.svg";
 import BG_TEXT_SM from "../public/monke-dao-muted-bg-text.svg";
+import LOGO from "../public/Logo-Icon.svg";
 
 const frameworks = [
   {
@@ -33,7 +34,7 @@ export default function Home() {
                 src={NFT}
                 alt="Logo"
                 sizes="(min-width: 808px) 550px, (max-width: 808px) 343px"
-                className="hidden lg:block lg:h-[45vh] lg:w-auto tall:block tall:h-[550px]"
+                className="hidden lg:block lg:h-[46.5vh] lg:w-auto tall:block tall:h-[550px]"
               />
               <Image
                 src={NFT}
@@ -43,7 +44,7 @@ export default function Home() {
               />
             </div>
             <div className="relative bg-white w-full max-w-[550px] lg:max-w-[500px] xl:max-w-[550px] 2xl:max-w-[663px] mx-auto lg:ml-0">
-              <CardWithForm />
+              <ArtDetails />
 
               {/* BACKGROUND SVGs */}
               <Image
@@ -61,6 +62,19 @@ export default function Home() {
           <section
             className={`hidden fixed bottom-0 right-0 left-0 lg:flex lg:w-[calc(500px+45vh)] xl:w-[calc(550px+45vh)] 2xl:w-[calc(663px+45vh)] tall:w-[calc(550px+663px)] mx-auto`}
           >
+            <div className="text-xl font-black capitalize flex flex-row items-baseline gap-2 absolute -inset-y-10">
+              <Image
+                src={LOGO}
+                alt="Monke Dao"
+                className="w-5 h-5 grayscale opacity-40"
+              />
+              MY SMB
+            </div>
+
+            <div className="font-black capitalize flex flex-row items-baseline gap-2 absolute -inset-y-9 right-0">
+              Points: 5,000
+            </div>
+
             {[...Array(8)].map((_, i) => {
               return (
                 <div
@@ -69,10 +83,15 @@ export default function Home() {
                 >
                   <div className="absolute inset-0 bg-gray-100 group-hover:-top-16 duration-500 transition-all ease-in-out">
                     <div className="absolute inset-0 m-4 z-10 text-muted-secondaryForeground opacity-0 group-hover:opacity-100 delay-300 duration-200 transition-all ease-in-out">
-                      <p className="text-xs font-black text-muted-secondaryForeground">
+                      <div className="relative text-[10px] tall:text-xs font-black text-muted-secondaryForeground">
                         Gen 2
-                      </p>
-                      <h2 className="text-xl font-black leading-none tracking-tight">
+                        <Image
+                          src={LOGO}
+                          alt="Monke Dao"
+                          className="absolute w-5 h-5 -top-2 -right-2"
+                        />
+                      </div>
+                      <h2 className="whitespace-nowrap tall:text-xl font-black leading-none tracking-tight">
                         SMB #1235
                       </h2>
                     </div>
