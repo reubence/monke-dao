@@ -28,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "pages/api/color.js"
+    "pages/api/color.js",
+    "components/animations.jsx"
   ],
   "exclude": ["node_modules"]
 }
