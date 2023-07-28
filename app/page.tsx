@@ -24,7 +24,7 @@ const frameworks = [
 
 export default function Home() {
   return (
-    <div className="relative h-screen w-screen overflow-x-clip lg:overflow-clip">
+    <div className="relative">
       <NavigationMenu />
       <main className="h-full w-full">
         <div className="max-w-screen-7xl w-full overflow-x-clip px-4 sm:px-8 lg:px-10 py-3 lg:py-20">

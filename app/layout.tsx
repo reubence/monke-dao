@@ -20,7 +20,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(inter.className, "relative")}>
+      <body
+        className={cn(
+          inter.className,
+          "relative h-screen w-screen overflow-x-clip lg:overflow-clip"
+        )}
+      >
         <Image
           src={BG_TEXT_LG}
           alt="Three Monkeys"
@@ -28,7 +33,7 @@ export default function RootLayout({
         />
         <GridPattern
           yOffset={-96}
-          className="absolute inset-x-0 -top-20 -right-14 -z-10 h-[1000px] w-full fill-[#184623]/40 stroke-muted-foreground [mask-image:linear-gradient(to_top_left,white_10%,transparent_30%)]"
+          className="hidden lg:block lg:absolute inset-x-0 -bottom-20 -right-14 -z-10 h-[1000px] w-full fill-[#184623]/40 stroke-muted-foreground [mask-image:linear-gradient(to_top_left,white_10%,transparent_24%)]"
           interactive
         />
         {children}
