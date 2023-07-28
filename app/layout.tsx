@@ -23,7 +23,7 @@ export default function RootLayout({
       <body
         className={cn(
           inter.className,
-          "relative h-screen w-screen overflow-x-clip lg:overflow-clip"
+          "relative h-screen w-screen overflow-x-clip tallXS:h-full tallXS:overflow-y-scroll lg:overflow-clip"
         )}
       >
         <Image

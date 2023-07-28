@@ -69,7 +69,7 @@ export function ArtDetails() {
           </TabsList>
           <Separator />
           <TabsContent className="" value="account">
-            <ScrollArea className="lg:h-[calc(45vh-212px)] tall:h-60">
+            <ScrollArea className="lg:h-[calc(45vh-212px)] tallXL:h-60 tallXS:h-56 ">
               {tasks.map((item, index) => (
                 <div className="py-4 px-8 " key={index}>
                   <div className="flex gap-2">
@@ -153,7 +153,7 @@ export function ArtDetails() {
             </ScrollArea>
           </TabsContent>
           <TabsContent value="password">
-            <ScrollArea className="lg:h-[calc(45vh-212px)] tall:h-60">
+            <ScrollArea className="lg:h-[calc(45vh-212px)] tallXL:h-60">
               {completedTasks.map((item, index) => (
                 <div className="py-4 px-8 " key={index}>
                   <div className="flex gap-2">

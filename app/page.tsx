@@ -73,7 +73,7 @@ export default function Home() {
       <NavigationMenu />
       <main className="h-full w-full">
         <div className="max-w-screen-7xl w-full overflow-x-clip px-4 sm:px-8 lg:px-10 py-3 lg:py-20">
-          <section className="lg:hidden pb-7">
+          <section className="lg:hidden max-w-[550px] mx-auto pb-7">
             <Slider />
           </section>
           <section className="flex flex-col lg:flex-row">
@@ -82,13 +82,13 @@ export default function Home() {
                 src={NFT_1}
                 alt="Logo"
                 sizes="(min-width: 808px) 550px, (max-width: 808px) 343px"
-                className="hidden lg:block lg:h-[46.5vh] lg:w-auto tall:block tall:h-[550px]"
+                className="hidden lg:block lg:h-[46.5vh] lg:w-auto tallXL:block tallXL:h-[550px] tallXS:h-[450px]"
               />
               <Image
                 src={NFT_1}
                 alt="Logo"
                 sizes="(min-width: 808px) 550px, (max-width: 808px) 343px"
-                className="lg:hidden tall:hidden"
+                className="lg:hidden tallXL:hidden"
               />
             </div>
             <div className="relative bg-white w-full max-w-[550px] lg:max-w-[500px] xl:max-w-[550px] 2xl:max-w-[663px] mx-auto lg:ml-0">
@@ -98,17 +98,17 @@ export default function Home() {
               <Image
                 src={BG_TEXT_SM}
                 alt="Monke Dao"
-                className="hidden 2xl:block tall:absolute tall:block 2xl:absolute bottom-5 right-8"
+                className="hidden 2xl:block tallXL:absolute tallXL:block 2xl:absolute bottom-5 right-8"
               />
               <Image
                 src={THREE_MONKEYS}
                 alt="Three Monkeys"
-                className="block lg:hidden tall:block tall:absolute bottom-0 left-0 w-full lg:w-fit"
+                className="block lg:hidden tallXL:block tallXL:absolute bottom-0 left-0 w-full lg:w-fit"
               />
             </div>
           </section>
           <section
-            className={`hidden fixed bottom-0 right-0 left-0 lg:flex lg:w-[calc(500px+45vh)] xl:w-[calc(550px+45vh)] 2xl:w-[calc(663px+45vh)] tall:w-[calc(550px+663px)] mx-auto`}
+            className={`hidden fixed bottom-0 right-0 left-0 lg:flex lg:w-[calc(500px+45vh)] xl:w-[calc(550px+45vh)] 2xl:w-[calc(663px+45vh)] tallXL:w-[calc(550px+663px)] tallXS:w-[calc(450px+663px)] mx-auto`}
           >
             <div className="text-xl font-black capitalize flex flex-row items-baseline gap-2 absolute -inset-y-10">
               <Image
@@ -126,12 +126,12 @@ export default function Home() {
             {data.map((item, i) => {
               return (
                 <div
-                  className="group hover:cursor-pointer relative flex-grow lg:h-[calc((500px+45vh)/8)] xl:h-[calc((550px+45vh)/8)]  2xl:h-[calc((663px+45vh)/8)] tall:h-[calc((550px+663px)/8)] bg-white"
+                  className="group hover:cursor-pointer relative flex-grow lg:h-[calc((500px+45vh)/8)] xl:h-[calc((550px+45vh)/8)]  2xl:h-[calc((663px+45vh)/8)] tallXL:h-[calc((550px+663px)/8)] bg-white"
                   key={i + 1}
                 >
                   <div className="absolute inset-0 bg-gray-100 group-hover:-top-16 duration-500 transition-all ease-in-out">
                     <div className="absolute inset-0 m-4 z-10 text-muted-secondaryForeground opacity-0 group-hover:opacity-100 delay-300 duration-200 transition-all ease-in-out">
-                      <div className="relative text-[10px] tall:text-xs font-black text-muted-secondaryForeground">
+                      <div className="relative text-[10px] tallXL:text-xs font-black text-muted-secondaryForeground">
                         Gen {item.gen}
                         <Image
                           src={LOGO}
@@ -139,7 +139,7 @@ export default function Home() {
                           className="absolute w-5 h-5 -top-2 -right-2"
                         />
                       </div>
-                      <h2 className="whitespace-nowrap tall:text-xl font-black leading-none tracking-tight">
+                      <h2 className="whitespace-nowrap tallXL:text-xl font-black leading-none tracking-tight">
                         SMB {item.id}
                       </h2>
                     </div>
