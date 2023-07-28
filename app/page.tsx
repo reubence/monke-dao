@@ -1,57 +1,66 @@
 import NavigationMenu from "@/components/navigation-menu";
 import Image from "next/image";
-import NFT from "public/nft-1.png";
 import { ArtDetails } from "@/components/art-details";
+
+import NFT_1 from "../public/nft-1.png";
+import NFT_2 from "../public/nft-2.png";
+import NFT_3 from "../public/nft-3.png";
+import NFT_4 from "../public/nft-4.png";
+import NFT_5 from "../public/nft-5.png";
+import NFT_6 from "../public/nft-6.png";
+import NFT_7 from "../public/nft-7.png";
+import NFT_8 from "../public/nft-8.png";
 import THREE_MONKEYS from "../public/three-monkeys-muted-bg.svg";
 import BG_TEXT_SM from "../public/monke-dao-muted-bg-text.svg";
 import LOGO from "../public/Logo-Icon.svg";
+
 import Slider from "@/components/slider";
 
 const data = [
   {
-    image: "/../public/nft-1.png",
+    image: NFT_1,
     id: "1741",
     gen: 2,
     multiplier: 1,
   },
   {
-    image: "/../public/nft-2.png",
+    image: NFT_2,
     id: "3253",
     gen: 3,
     multiplier: 4,
   },
   {
-    image: "/../public/nft-3.png",
+    image: NFT_3,
     id: "4456",
     gen: 2,
     multiplier: 1,
   },
   {
-    image: "/../public/nft-4.png",
+    image: NFT_4,
     id: "1741",
     gen: 2,
     multiplier: 1,
   },
   {
-    image: "/../public/nft-5.png",
+    image: NFT_5,
     id: "3253",
     gen: 3,
     multiplier: 4,
   },
   {
-    image: "/../public/nft-6.png",
+    image: NFT_6,
     id: "4456",
     gen: 2,
     multiplier: 1,
   },
   {
-    image: "/../public/nft-7.png",
+    image: NFT_7,
     id: "1741",
     gen: 2,
     multiplier: 1,
   },
   {
-    image: "/../public/nft-8.png",
+    image: NFT_8,
     id: "3253",
     gen: 3,
     multiplier: 4,
@@ -70,13 +79,13 @@ export default function Home() {
           <section className="flex flex-col lg:flex-row">
             <div className="flex mx-auto lg:mr-0">
               <Image
-                src={NFT}
+                src={NFT_1}
                 alt="Logo"
                 sizes="(min-width: 808px) 550px, (max-width: 808px) 343px"
                 className="hidden lg:block lg:h-[46.5vh] lg:w-auto tall:block tall:h-[550px]"
               />
               <Image
-                src={NFT}
+                src={NFT_1}
                 alt="Logo"
                 sizes="(min-width: 808px) 550px, (max-width: 808px) 343px"
                 className="lg:hidden tall:hidden"
